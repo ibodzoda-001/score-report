@@ -1,0 +1,16 @@
+<div>
+  <h3>Преподаватели</h3>
+  <hr>
+  <input placeholder="Напишите ФИО преподавателя..." type="text" class="form-control inputStyleClass" [(ngModel)]="teacherName">
+  <button class="btn btn-success insertBtn" (click)="onTeacherInsertBtnClick()">Добавить преподавателя</button>
+</div>
+<div style="padding: 10px; overflow-y: scroll; height: 71vh">
+  <div *ngFor="let teacher of teachers | async" class="mainDivOfCRUD">
+    <button (click)="teacherDeleteFunction(teacher.id)" class="deleteBtn">x</button>
+    <div style="display: inline-block">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      {{ teacher.name}}
+    </div>
+  </div>
+
+</div>
